@@ -1,0 +1,417 @@
+/* Căn giữa toàn bộ nội dung */
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-image: url("https://img4.thuthuatphanmem.vn/uploads/2020/04/11/hinh-nen-cung-bo-cap_093935245.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+/* Kiểu dáng cho khung nội dung */
+.content {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+/* Bo góc và nền mờ cho nội dung văn bản */
+.inner-content {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* Nền mờ */
+}
+
+/* Căn hai ngày trên cùng một hàng */
+.row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Hiệu ứng chuyển màu chữ nhẹ nhàng */
+.gradient-text {
+    background: linear-gradient(90deg, #12e327, #577ce4, #c61212, #aa1c90, #59565b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: gradientAnimation 8s infinite linear;
+}
+
+/* Hiệu ứng chuyển động cho màu sắc */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Kiểu dáng riêng cho số ngày còn lại */
+#daysLeft {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333333;
+}
+
+/* Định dạng cho nội dung bổ sung */
+.extra-content {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(240, 240, 240, 0.8);
+    font-size: 1em;
+    color: #333;
+    text-align: center;
+}
+
+/* Định dạng cho logo */
+.logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff6b6b, #fcbf49, #4d96ff, #9b5de5, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: 'Pacifico', cursive;
+    animation: colorChange 6s infinite linear, pulse 1s infinite ease-in-out, move 2s infinite alternate; /* Thêm animation move */
+}
+
+/* Hiệu ứng phóng to thu nhỏ */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Giữ nguyên kích thước ban đầu */
+    }
+    50% {
+        transform: scale(1.1); /* Phóng to lên 10% */
+    }
+}
+
+/* Hiệu ứng di chuyển lên và xuống */
+/* @keyframes move {
+    0% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+} */
+@keyframes colorChange {
+    0% { color: #ff6b6b; }
+    20% { color: #fcbf49; }
+    40% { color: #4d96ff; }
+    60% { color: #9b5de5; }
+    80% { color: #ff6b6b; }
+    100% { color: #fcbf49; }
+}
+
+/* Hiệu ứng đổi màu chữ */
+@keyframes colorChange {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.play-button {
+    margin-top: 20px;
+    width: 60px; /* Đường kính nút */
+    height: 60px; /* Đường kính nút */
+    border-radius: 50%; /* Bo tròn thành hình tròn */
+    font-size: 1.5em; /* Kích thước biểu tượng */
+    color: #fff;
+    background-color: #4CAF50; /* Màu xanh lá */
+    border: none;
+    cursor: pointer;
+    display: flex; /* Để căn giữa biểu tượng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    transition: background-color 0.3s;
+    outline: none; /* Bỏ viền mặc định */
+}
+/* Đổi màu khi hover */
+.play-button:hover {
+    background-color: #45a049; /* Màu xanh lá đậm khi hover */
+}
+
+/* Kiểu dáng cho nút đang phát */
+.playing {
+    background-color: #f44336; /* Màu đỏ khi đang phát */
+}
+.controls {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+.control-button {
+   
+    background-color: transparent; /* Nền trong suốt */
+    border: none; /* Bỏ viền */
+    outline: none; /* Bỏ outline */
+    cursor: pointer; /* Con trỏ khi hover */
+    font-size: 24px; /* Kích thước biểu tượng */
+    padding: 10px; /* Padding để tăng diện tích nhấp */
+}
+
+.play-button {
+    background-color: #4CAF50; /* Màu nền cho nút play */
+    border-radius: 50%; /* Để nó thành hình tròn */
+    width: 60px; /* Chiều rộng */
+    height: 60px; /* Chiều cao */
+    display: flex;
+    align-items: center; /* Căn giữa biểu tượng */
+    justify-content: center; /* Căn giữa biểu tượng */
+    margin: 0 10px; /* Khoảng cách giữa nút play và các nút khác */
+}
+.control-button:hover {
+    background-color: #8c928c; /* Màu xanh lá đậm khi hover */
+}
+/* Kiểu dáng cho nút điều khiển tua lại và tiến tới */
+.play-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; /* Khoảng cách trên và dưới */
+}
+/* Các kiểu dáng khác giữ nguyên */
+
+/* Kiểu dáng cho hình ảnh GIF */
+.gif-image {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của khu vực chứa */
+    height: 200px; /* Giữ tỷ lệ của hình ảnh */
+    border-radius: 10px; /* Bo góc hình chữ nhật */
+    display: block; /* Để căn giữa */
+    margin: 0 auto; /* Căn giữa hình ảnh */
+}
+
+.controls {
+    display: flex;
+    /* Căn giữa hai phần tử */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-top: 10px; /* Khoảng cách trên cùng */
+    width: 100%; /* Chiều rộng toàn bộ */
+}
+
+.controls span {
+    margin: 0 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.volume-control {
+    width: 120px;
+    margin-left: 100px; /* Thiết lập chiều rộng của thanh âm lượng */
+}
+.volume-control label {
+    display: block; /* Để nhãn đứng riêng */
+    margin-bottom: 5px; /* Khoảng cách giữa nhãn và thanh trượt */
+    font-size: 1em; /* Kích thước chữ cho nhãn */
+    color: #333; /* Màu chữ */
+}
+
+.volume-control input[type="range"] {
+    -webkit-appearance: none; /* Bỏ kiểu mặc định */
+    appearance: none;
+    width: 100%;
+    height: 10px; /* Tăng chiều cao của thanh âm lượng */
+    background: #ccc; /* Màu nền */
+    border-radius: 5px; /* Bo góc thanh trượt */
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Bỏ kiểu mặc định cho nút */
+    appearance: none;
+    width: 20px; /* Kích thước của nút âm lượng */
+    height: 20px; /* Kích thước của nút âm lượng */
+    background: #4CAF50; /* Màu nút */
+    border-radius: 50%; /* Bo tròn nút */
+    cursor: pointer; /* Con trỏ khi di chuột lên nút */
+}
+
+.volume-control input[type="range"]::-moz-range-thumb {
+    width: 20px; /* Kích thước của nút âm lượng */
+    height: 20px; /* Kích thước của nút âm lượng */
+    background: #4CAF50; /* Màu nút */
+    border-radius: 50%; /* Bo tròn nút */
+    cursor: pointer; /* Con trỏ khi di chuột lên nút */
+}
+
+/* Kiểu dáng cho danh sách nhạc */
+.music-list {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 10px; /* Cách từ trên 10px */
+    right: 10px; /* Cách từ bên phải 10px */
+    background-color: rgba(255, 255, 255, 0.8); /* Nền mờ */
+    border-radius: 8px; /* Bo góc */
+    padding: 10px; /* Padding cho khung */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    z-index: 1000; /* Đảm bảo nó nổi bật hơn các phần khác */
+}
+
+.music-list h3 {
+    margin: 0 0 5px; /* Khoảng cách dưới tiêu đề */
+    font-size: 1.2em; /* Kích thước chữ tiêu đề */
+}
+
+.music-list ul {
+    list-style: none; /* Bỏ đánh dấu */
+    padding: 0; /* Bỏ padding */
+    margin: 0; /* Bỏ margin */
+}
+
+.music-list li {
+    margin: 5px 0; /* Khoảng cách giữa các bài hát */
+    font-size: 1em; /* Kích thước chữ cho các bài hát */
+    cursor: pointer; /* Con trỏ khi di chuột lên tên bài hát */
+    transition: color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+.music-list li:hover {
+    color: #4CAF50; /* Màu xanh lá khi hover */
+}
+
+.active {
+    background-color: #d3d3d3; /* Màu nền cho bài hát đang phát */
+    font-weight: bold;
+     /* Làm nổi bật tên bài hát */
+
+}
+
+
+/* CSS cho hiệu ứng sóng lướt */
+#songTitle {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff00ff, #00ffcc, #ffcc00);
+    background-size: 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: waveColor 3s linear infinite, waveEffect 1s ease-in-out infinite;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes waveColor {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes waveEffect {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+#songTitle span {
+    display: inline-block;
+    animation: waveLetters 0.6s ease-in-out infinite;
+}
+
+@keyframes waveLetters {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Tạo hiệu ứng sóng đi theo từng chữ */
+#songTitle span:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+#songTitle span:nth-child(even) {
+    animation-delay: 0.3s;
+}
+
+/* Định vị canvas của sóng nhạc */
+/* Định vị canvas của sóng nhạc với nền mờ */
+#waveform {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 10px; /* Cách từ trên 10px */
+    left: 10px; /* Cách từ bên trái 10px */
+    z-index: 999; /* Đảm bảo nó xuất hiện phía trên các phần tử khác nếu cần */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+    background-color: rgba(255, 255, 255, 0.5); /* Nền mờ với độ trong suốt 50% */
+}
+
+@media (max-width: 768px) {
+    /* Căn chỉnh cho toàn bộ nội dung để vừa màn hình nhỏ hơn */
+    .content {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .inner-content {
+        padding: 10px;
+    }
+
+    /* Căn chỉnh lại canvas */
+    .canvas-container {
+        width: 90%; /* Chiếm hết chiều rộng của màn hình */
+        max-width: 300px; /* Chiều rộng tối đa */
+        margin: 0 auto; /* Căn giữa */
+        top: 20px; /* Đảm bảo cách các phần tử khác một chút */
+        left: auto;
+        right: auto;
+    }
+    #waveform {
+        width: 100%; /* Điều chỉnh chiều rộng */
+        height: auto; /* Giữ tỷ lệ */
+    }
+
+    /* Điều chỉnh kích thước font chữ và padding */
+    .row, .extra-content {
+        font-size: 1em;
+        margin: 8px 0;
+    }
+
+    /* Điều chỉnh kích thước logo */
+    .logo {
+        font-size: 2em;
+    }
+
+    /* Điều chỉnh kích thước nút phát nhạc */
+    .play-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+
+    /* Đảm bảo các nút điều khiển không bị chồng lên nhau */
+    .play-controls, .controls {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    /* Điều chỉnh khoảng cách và kích thước của danh sách nhạc */
+    .music-list {
+        right: 5px;
+        top: 5px;
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .music-list li {
+        margin: 4px 0;
+    }
+}
+
+
+

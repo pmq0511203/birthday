@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="path_to_your_favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="content">
+        <div class="inner-content">
+            <!-- Thêm GIF vào đây -->
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmF6ZmczaGwzNmY2Y3M3a2hvczIyanliZGF1M2NsN2lzdXA3b3RjbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ytwDCpH2VqBVXphoKk/giphy.webp" alt="Animated GIF" class="gif-image">
+    
+            <!-- Thêm danh sách nhạc -->
+            <div class="music-list">
+                <h3>Danh sách nhạc</h3>
+                <ul>
+                    <li id="li-1" data-src="LaoTamKhoTu.mp3" >Lao tâm khổ tứ Remix - Thanh Hưng</li>
+                    <li id="li-2" data-src="sweetdream.mp3" class="active">Sweet Dream - Yang Remix</li>
+                    <li id="li-3" data-src="DeAnhLuongThien.mp3">Để Anh Lương THiên - Linh Hương Luz Cover</li>
+                    <li id="li-4" data-src="Mashup.mp3">Mashup SCĐ - SMCCTN - ĐAB</li>
+                    <li id="li-5" data-src="DuongHoiEmOnKhong.mp3">Đừng hỏi em ổn không - H2K Cover</li>
+                </ul>
+            </div>
+            <div class="logo">PMQ</div>
+    
+            <div class="row gradient-text">
+                <p id="today"></p>
+                <p id="targetDate"></p>
+            </div>
+            <p id="daysLeft" class="gradient-text"></p>
+            
+            <div class="extra-content">
+                <span id="songTitle">Đang phát: Sweet Dream - Yang Remix</span>
+            </div>
+            
+            <br>
+    
+            <div class="play-controls">
+                <button id="rewindButton" class="control-button"><i class="fas fa-undo"></i></button>
+                <button id="playButton" class="play-button"><i class="fas fa-play"></i></button>
+                <button id="forwardButton" class="control-button"><i class="fas fa-redo"></i></button>
+            </div>
+    
+            <!-- <audio id="audio" src="sweetdream.mp3"></audio>
+            <audio id="audio" src="LaoTamKhoTu.mp3"></audio> -->
+            <audio id="audio" src="sweetdream.mp3"></audio>
+            <div id="audioTime" style="text-align: center; margin-top: 5px;"></div>
+            <div class="controls">
+                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                <div class="volume-control">
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" style="width: 100%;">
+                </div>
+            </div>
+            <input type="range" id="progressBar" value="0" max="100" step="1" style="width: 100%; margin-top: 10px;">
+            <canvas id="waveform" width="340" height="170"></canvas>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
